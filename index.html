@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengkel Las Cipta Kencana Jaya — Spesialis Kanopi & Pagar Cirebon | Bisa Panggilan</title>
+    <meta name="description" content="Bengkel Las Cipta Kencana Jaya melayani pembuatan kanopi, pagar minimalis, teralis, railing tangga, dan jasa las panggilan di Kota & Kabupaten Cirebon. Gratis survei lokasi!">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Konfigurasi Tailwind untuk Font & Warna Kustom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        charcoal: {
+                            800: '#26292e',
+                            900: '#181a1d',
+                            950: '#101214',
+                        },
+                        steel: {
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                        },
+                        amberforge: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Menyembunyikan scrollbar pada galeri carousel namun tetap bisa di-scroll manual */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-amberforge-500 selection:text-charcoal-950">
+
+    <!-- ==================== HEADER / NAVIGASI ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-charcoal-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo Teks -->
+                <a href="#beranda" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-amberforge-500 flex items-center justify-center text-charcoal-950 font-extrabold text-xl shadow-md group-hover:bg-amberforge-400 transition">
+                        <i class="fa-solid fa-fire-flame-curved"></i>
+                    </div>
+                    <div>
+                        <span class="block text-white font-extrabold text-base sm:text-lg tracking-wide leading-tight">
+                            BENGKEL LAS <span class="text-amberforge-500">CIPTA KENCANA JAYA</span>
+                        </span>
+                        <span class="block text-slate-400 text-[11px] sm:text-xs font-medium tracking-wider uppercase">
+                            Spesialis Kanopi & Pagar Cirebon
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Navigasi Desktop -->
+                <nav class="hidden md:flex items-center space-x-7">
+                    <a href="#beranda" class="text-sm font-medium text-slate-300 hover:text-amberforge-400 transition">Beranda</a>
+                    <a href="#layanan" class="text-sm font-medium text-slate-300 hover:text-amberforge-400 transition">Layanan</a>
+                    <a href="#galeri" class="text-sm font-medium text-slate-300 hover:text-amberforge-400 transition">Hasil Kerja</a>
+                    <a href="#keunggulan" class="text-sm font-medium text-slate-300 hover:text-amberforge-400 transition">Keunggulan</a>
+                    <a href="#area" class="text-sm font-medium text-slate-300 hover:text-amberforge-400 transition">Area Layanan</a>
+                    <a href="#konsultasi" class="text-sm font-medium text-slate-300 hover:text-amberforge-400 transition">Kontak</a>
+                </nav>
+
+                <!-- Tombol CTA Desktop & Tombol Menu Mobile -->
+                <div class="flex items-center space-x-3">
+                    <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20ingin%20konsultasi%20mengenai%20pembuatan%2Fperbaikan%20las." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="hidden sm:inline-flex items-center px-4 py-2.5 rounded-xl bg-amberforge-500 hover:bg-amberforge-400 text-charcoal-950 font-bold text-sm transition shadow-md hover:shadow-amberforge-500/20">
+                        <i class="fa-brands fa-whatsapp text-lg mr-2"></i>
+                        Hubungi WA
+                    </a>
+
+                    <!-- Tombol Hamburger Mobile -->
+                    <button id="mobile-menu-btn" aria-label="Buka Menu" class="md:hidden p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-charcoal-800 focus:outline-none transition">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-charcoal-900 border-t border-slate-800 px-4 pt-3 pb-6 space-y-2 shadow-2xl">
+            <a href="#beranda" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-charcoal-800 hover:text-amberforge-400 transition">Beranda</a>
+            <a href="#layanan" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-charcoal-800 hover:text-amberforge-400 transition">Layanan Kami</a>
+            <a href="#galeri" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-charcoal-800 hover:text-amberforge-400 transition">Galeri Hasil Kerja</a>
+            <a href="#keunggulan" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-charcoal-800 hover:text-amberforge-400 transition">Keunggulan</a>
+            <a href="#area" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-charcoal-800 hover:text-amberforge-400 transition">Area Layanan Cirebon</a>
+            <a href="#konsultasi" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-charcoal-800 hover:text-amberforge-400 transition">Estimasi & Kontak</a>
+            <div class="pt-2">
+                <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20ingin%20konsultasi%20mengenai%20jasa%20las." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="w-full flex items-center justify-center px-4 py-3.5 rounded-xl bg-amberforge-500 hover:bg-amberforge-400 text-charcoal-950 font-bold text-base shadow-md transition">
+                    <i class="fa-brands fa-whatsapp text-xl mr-2"></i>
+                    Chat WhatsApp Sekarang
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="beranda" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-charcoal-950 text-white overflow-hidden">
+        <!-- Background Gambar Google Drive dengan Direct Thumbnail / Export Link -->
+        <img src="https://lh3.googleusercontent.com/d/19kWgQQUwiVPnn72Skv2rVENUoNe-WFBg=s1600" 
+             alt="Latar Belakang Bengkel Las Cipta Kencana Jaya"
+             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=download&id=19kWgQQUwiVPnn72Skv2rVENUoNe-WFBg';"
+             class="absolute inset-0 w-full h-full object-cover object-center opacity-50 pointer-events-none">
+
+        <!-- Dark Gradient Overlay agar Teks Tetap Kontras, Tajam & Profesional -->
+        <div class="absolute inset-0 bg-gradient-to-r from-charcoal-950/95 via-charcoal-950/85 to-charcoal-950/75 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-transparent to-charcoal-950/70 pointer-events-none"></div>
+
+        <!-- Latar Belakang Dekoratif Industrial (Grid & Cahaya Percikan Las) -->
+        <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(#64748b 1px, transparent 1px); background-size: 28px 28px;"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-amberforge-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-10 w-72 h-72 bg-slate-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Kolom Teks Utama -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <!-- Badge Panggilan -->
+                    <div class="inline-flex items-center px-4 py-2 rounded-full bg-charcoal-800 border border-slate-700 text-amberforge-400 text-xs sm:text-sm font-semibold tracking-wide">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse mr-2.5"></span>
+                        Menerima Pesanan Baru & Jasa Las Panggilan ke Rumah
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                        Bengkel Las Cipta Kencana Jaya — <span class="text-amberforge-500">Spesialis Kanopi & Pagar Cirebon</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Solusi konstruksi besi terpercaya untuk hunian dan tempat usaha Anda. Kami mengutamakan <strong class="text-white font-semibold">pengerjaan rapi, material besi berkualitas standar SNI, gratis survei & konsultasi desain</strong>, serta siap dipanggil langsung ke lokasi di area Kota dan Kabupaten Cirebon.
+                    </p>
+
+                    <!-- Tombol Aksi Utama -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20tertarik%20untuk%20konsultasi%20dan%20survei%20pembuatan%20kanopi%2Fpagar%20di%20Cirebon." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl bg-amberforge-500 hover:bg-amberforge-400 text-charcoal-950 font-extrabold text-base shadow-lg shadow-amberforge-500/25 transition transform hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-2xl mr-2.5"></i>
+                            Konsultasi Gratis via WA
+                        </a>
+
+                        <a href="#konsultasi" 
+                           class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 rounded-2xl bg-charcoal-800 hover:bg-slate-700 text-white border border-slate-700 font-semibold text-base transition">
+                            <i class="fa-solid fa-calculator text-amberforge-400 mr-2.5"></i>
+                            Hitung Estimasi Harga
+                        </a>
+                    </div>
+
+                    <!-- Highlight Kepercayaan Cepat -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 text-left">
+                        <div>
+                            <p class="text-amberforge-400 font-extrabold text-lg sm:text-2xl">Gratis</p>
+                            <p class="text-slate-400 text-xs sm:text-sm">Survei & Ukur Lokasi</p>
+                        </div>
+                        <div>
+                            <p class="text-amberforge-400 font-extrabold text-lg sm:text-2xl">SNI</p>
+                            <p class="text-slate-400 text-xs sm:text-sm">Material Besi Tebal</p>
+                        </div>
+                        <div>
+                            <p class="text-amberforge-400 font-extrabold text-lg sm:text-2xl">24 Jam*</p>
+                            <p class="text-slate-400 text-xs sm:text-sm">Respon Cepat WA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Ilustrasi / Kartu Info Industrial -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-charcoal-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                        <!-- Garis Aksen Oranye Atas -->
+                        <div class="w-16 h-1.5 bg-amberforge-500 rounded-full mb-6"></div>
+                        
+                        <h2 class="text-xl font-bold text-white mb-2">Butuh Jasa Las Cepat & Rapi?</h2>
+                        <p class="text-slate-400 text-sm mb-6">
+                            Tidak perlu repot keluar rumah. Tim Bengkel Las Cipta Kencana Jaya siap datang membawa sampel bahan dan katalog model ke tempat Anda.
+                        </p>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start p-3.5 rounded-2xl bg-charcoal-800/70 border border-slate-700/60">
+                                <div class="w-10 h-10 rounded-xl bg-amberforge-500/15 text-amberforge-400 flex items-center justify-center flex-shrink-0 mr-3.5">
+                                    <i class="fa-solid fa-truck-pickup text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-semibold text-sm">Layanan Las Panggilan</h3>
+                                    <p class="text-slate-400 text-xs mt-0.5">Perbaikan pagar macet, ganti roda, las engsel patah, hingga bongkar pasang kanopi.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start p-3.5 rounded-2xl bg-charcoal-800/70 border border-slate-700/60">
+                                <div class="w-10 h-10 rounded-xl bg-amberforge-500/15 text-amberforge-400 flex items-center justify-center flex-shrink-0 mr-3.5">
+                                    <i class="fa-solid fa-compass-drafting text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-semibold text-sm">Custom Desain Sesuai Selera</h3>
+                                    <p class="text-slate-400 text-xs mt-0.5">Model minimalis modern, industrial, kombinasi woodplank, hingga motif cutting laser.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start p-3.5 rounded-2xl bg-charcoal-800/70 border border-slate-700/60">
+                                <div class="w-10 h-10 rounded-xl bg-amberforge-500/15 text-amberforge-400 flex items-center justify-center flex-shrink-0 mr-3.5">
+                                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-semibold text-sm">Finishing Cat Anti Karat</h3>
+                                    <p class="text-slate-400 text-xs mt-0.5">Dilapisi cat dasar epoxy/meni anti karat agar awet menghadapi cuaca panas & hujan Cirebon.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 pt-5 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                            <span><i class="fa-solid fa-location-dot text-amberforge-500 mr-1.5"></i>Kota & Kab. Cirebon</span>
+                            <span class="font-semibold text-slate-200">WA: 0812-8053-5763</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LAYANAN KAMI (GRID CARD) ==================== -->
+    <section id="layanan" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Judul Section -->
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block px-3.5 py-1.5 rounded-full bg-amber-100 text-amberforge-600 font-bold text-xs uppercase tracking-wider mb-3">
+                    Layanan Pekerjaan Besi
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-charcoal-900 tracking-tight">
+                    Spesialis Konstruksi Besi & Las Panggilan
+                </h2>
+                <p class="mt-3 text-slate-600 text-base sm:text-lg">
+                    Kami mengerjakan berbagai kebutuhan eksterior dan interior rumah, ruko, gudang, maupun kantor dengan presisi tinggi.
+                </p>
+            </div>
+
+            <!-- Grid 6 Layanan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                
+                <!-- Card 1: Pembuatan Kanopi -->
+                <div class="group bg-slate-50 hover:bg-white rounded-3xl p-7 border border-slate-200/80 hover:border-amberforge-400 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-charcoal-900 text-amberforge-400 group-hover:bg-amberforge-500 group-hover:text-charcoal-950 flex items-center justify-center text-2xl mb-6 transition">
+                            <i class="fa-solid fa-warehouse"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-charcoal-900 mb-3">Pembuatan Kanopi</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Kanopi carport, teras, dan jemuran dengan rangka kokoh dan pilihan atap modern yang meredam panas serta hujan.
+                        </p>
+                        <ul class="space-y-2 text-xs font-medium text-slate-700 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Atap Alderon (Double / Single Layer)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Spandek Pasir, Polycarbonate & Solarflat</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Kanopi Kaca Tempered & Rangka Hollow/WF</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20ingin%20tanya%20harga%20pembuatan%20Kanopi." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center text-sm font-bold text-charcoal-900 group-hover:text-amberforge-600 transition">
+                        Tanya Harga Kanopi <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2: Pagar & Pintu Gerbang -->
+                <div class="group bg-slate-50 hover:bg-white rounded-3xl p-7 border border-slate-200/80 hover:border-amberforge-400 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-charcoal-900 text-amberforge-400 group-hover:bg-amberforge-500 group-hover:text-charcoal-950 flex items-center justify-center text-2xl mb-6 transition">
+                            <i class="fa-solid fa-dungeon"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-charcoal-900 mb-3">Pagar & Pintu Gerbang</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Tingkatkan keamanan sekaligus estetika tampilan depan rumah Anda dengan pintu pagar dorong, lipat, maupun swing.
+                        </p>
+                        <ul class="space-y-2 text-xs font-medium text-slate-700 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Pagar Minimalis Hollow & Besi Tempa</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Pagar Industrial & Kombinasi Woodplank</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Pagar Plat Cutting Laser Motif Elegan</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20ingin%20tanya%20harga%20pembuatan%20Pagar%20%2F%20Pintu%20Gerbang." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center text-sm font-bold text-charcoal-900 group-hover:text-amberforge-600 transition">
+                        Tanya Harga Pagar <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3: Teralis Jendela & Pintu Teralis -->
+                <div class="group bg-slate-50 hover:bg-white rounded-3xl p-7 border border-slate-200/80 hover:border-amberforge-400 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-charcoal-900 text-amberforge-400 group-hover:bg-amberforge-500 group-hover:text-charcoal-950 flex items-center justify-center text-2xl mb-6 transition">
+                            <i class="fa-solid fa-border-all"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-charcoal-900 mb-3">Teralis Jendela & Pintu Teralis</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Perlindungan ekstra untuk keluarga tercinta tanpa membuat rumah terasa pengap atau menghalangi sirkulasi udara.
+                        </p>
+                        <ul class="space-y-2 text-xs font-medium text-slate-700 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Teralis Jendela Besi Nako & Strip</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Pintu Kasa Nyamuk & Pintu Pengaman</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Pengaman Void / Lubang Angin Atas</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20ingin%20tanya%20harga%20pembuatan%20Teralis%20Jendela%20%2F%20Pintu%20Teralis." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center text-sm font-bold text-charcoal-900 group-hover:text-amberforge-600 transition">
+                        Tanya Harga Teralis <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 4: Railing Tangga & Balkon -->
+                <div class="group bg-slate-50 hover:bg-white rounded-3xl p-7 border border-slate-200/80 hover:border-amberforge-400 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-charcoal-900 text-amberforge-400 group-hover:bg-amberforge-500 group-hover:text-charcoal-950 flex items-center justify-center text-2xl mb-6 transition">
+                            <i class="fa-solid fa-stairs"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-charcoal-900 mb-3">Railing Tangga & Balkon</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Pegangan tangga dan pembatas balkon lantai 2 yang kuat, aman bagi anak-anak, serta selaras dengan interior rumah.
+                        </p>
+                        <ul class="space-y-2 text-xs font-medium text-slate-700 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Railing Besi Hollow Minimalis</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Kombinasi Pegangan Kayu / Stainless</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Railing Balkon Klasik & Industrial</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20ingin%20tanya%20harga%20Railing%20Tangga%20%2F%20Balkon." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center text-sm font-bold text-charcoal-900 group-hover:text-amberforge-600 transition">
+                        Tanya Harga Railing <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 5: Tangga Putar & Mezzanine -->
+                <div class="group bg-slate-50 hover:bg-white rounded-3xl p-7 border border-slate-200/80 hover:border-amberforge-400 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-charcoal-900 text-amberforge-400 group-hover:bg-amberforge-500 group-hover:text-charcoal-950 flex items-center justify-center text-2xl mb-6 transition">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-charcoal-900 mb-3">Tangga Putar & Mezzanine</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Solusi hemat ruang untuk akses ke lantai atas, rooftop, tempat jemur, atau penambahan ruangan mezzanine di rumah & ruko.
+                        </p>
+                        <ul class="space-y-2 text-xs font-medium text-slate-700 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Tangga Putar & Tangga Rebah Besi</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Konstruksi Lantai Mezzanine Kokoh</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-500 mr-2"></i>Pijakan Plat Bordes Anti Slip / Kayu</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20ingin%20tanya%20harga%20Tangga%20Putar%20%2F%20Mezzanine." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center text-sm font-bold text-charcoal-900 group-hover:text-amberforge-600 transition">
+                        Tanya Harga Tangga <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 6: Jasa Las Panggilan & Perbaikan (Highlight) -->
+                <div class="group bg-charcoal-900 text-white rounded-3xl p-7 border-2 border-amberforge-500 shadow-lg hover:shadow-2xl transition duration-300 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-4 right-4 px-2.5 py-1 rounded-lg bg-amberforge-500 text-charcoal-950 text-[11px] font-extrabold uppercase">
+                        Bisa Panggilan
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amberforge-500 text-charcoal-950 flex items-center justify-center text-2xl mb-6">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Jasa Las Panggilan & Perbaikan</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                            Pagar rumah macet, roda anjlok, atau engsel patah? Kami siap datang membawa peralatan las lengkap langsung ke lokasi Anda.
+                        </p>
+                        <ul class="space-y-2 text-xs font-medium text-slate-200 mb-6">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-400 mr-2"></i>Servis Pagar Macet & Ganti Roda/Rel</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-400 mr-2"></i>Las Engsel Pintu Patah & Grendel</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-amberforge-400 mr-2"></i>Renovasi & Ganti Atap Kanopi Bocor</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20membutuhkan%20jasa%20las%20panggilan%20%2F%20perbaikan%20di%20lokasi%20saya." 
+                       target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center text-sm font-bold text-amberforge-400 hover:text-amberforge-300 transition">
+                        Panggil Tukang Las <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GALERI HASIL KERJA (AUTO-SCROLL CAROUSEL 3 DETIK) ==================== -->
+    <section id="galeri" class="py-20 bg-charcoal-950 text-white border-t border-slate-800 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="max-w-2xl">
+                    <span class="inline-block px-3.5 py-1.5 rounded-full bg-amberforge-500/20 text-amberforge-400 font-bold text-xs uppercase tracking-wider mb-3">
+                        Dokumentasi Proyek
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Galeri Hasil Kerja Bengkel Las Cipta Kencana Jaya
+                    </h2>
+                    <p class="mt-3 text-slate-400 text-base">
+                        Beberapa dokumentasi pemasangan kanopi, pagar besi, teralis, dan konstruksi las hasil pengerjaan tim kami di Cirebon.
+                    </p>
+                </div>
+
+                <!-- Tombol Navigasi Manual -->
+                <div class="flex items-center space-x-3">
+                    <button id="galeri-prev" aria-label="Geser Kiri" class="w-11 h-11 rounded-xl bg-charcoal-800 hover:bg-amberforge-500 text-white hover:text-charcoal-950 border border-slate-700 flex items-center justify-center transition shadow-md">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button id="galeri-next" aria-label="Geser Kanan" class="w-11 h-11 rounded-xl bg-charcoal-800 hover:bg-amberforge-500 text-white hover:text-charcoal-950 border border-slate-700 flex items-center justify-center transition shadow-md">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Track Carousel yang Menggulir Otomatis Setiap 3 Detik -->
+            <div id="galeri-track" class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-4">
+                
+                <!-- Foto 1 -->
+                <div class="galeri-item snap-start shrink-0 w-72 sm:w-80 md:w-96 group relative rounded-2xl overflow-hidden bg-charcoal-900 border border-slate-800 shadow-xl">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/19kWgQQUwiVPnn72Skv2rVENUoNe-WFBg=s1600" 
+                             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=download&id=19kWgQQUwiVPnn72Skv2rVENUoNe-WFBg';"
+                             alt="Hasil Kerja Bengkel Las Cipta Kencana Jaya 1" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 bg-charcoal-900 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-sm font-bold text-white">Dokumentasi Proyek #01</span>
+                        <span class="text-xs text-amberforge-400 font-semibold">Cipta Kencana Jaya</span>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="galeri-item snap-start shrink-0 w-72 sm:w-80 md:w-96 group relative rounded-2xl overflow-hidden bg-charcoal-900 border border-slate-800 shadow-xl">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1vd_KsfqKUzu179kdkYkoqoQO67PM5uN3=s1600" 
+                             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=download&id=1vd_KsfqKUzu179kdkYkoqoQO67PM5uN3';"
+                             alt="Hasil Kerja Bengkel Las Cipta Kencana Jaya 2" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 bg-charcoal-900 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-sm font-bold text-white">Dokumentasi Proyek #02</span>
+                        <span class="text-xs text-amberforge-400 font-semibold">Cipta Kencana Jaya</span>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="galeri-item snap-start shrink-0 w-72 sm:w-80 md:w-96 group relative rounded-2xl overflow-hidden bg-charcoal-900 border border-slate-800 shadow-xl">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1mQJZmrReKVkV_UDIFY9XMmgQ9LMlccBZ=s1600" 
+                             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=download&id=1mQJZmrReKVkV_UDIFY9XMmgQ9LMlccBZ';"
+                             alt="Hasil Kerja Bengkel Las Cipta Kencana Jaya 3" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 bg-charcoal-900 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-sm font-bold text-white">Dokumentasi Proyek #03</span>
+                        <span class="text-xs text-amberforge-400 font-semibold">Cipta Kencana Jaya</span>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="galeri-item snap-start shrink-0 w-72 sm:w-80 md:w-96 group relative rounded-2xl overflow-hidden bg-charcoal-900 border border-slate-800 shadow-xl">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1SI8La_TAc_558p3XbF_zjcnt4SWbwT9p=s1600" 
+                             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=download&id=1SI8La_TAc_558p3XbF_zjcnt4SWbwT9p';"
+                             alt="Hasil Kerja Bengkel Las Cipta Kencana Jaya 4" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 bg-charcoal-900 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-sm font-bold text-white">Dokumentasi Proyek #04</span>
+                        <span class="text-xs text-amberforge-400 font-semibold">Cipta Kencana Jaya</span>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="galeri-item snap-start shrink-0 w-72 sm:w-80 md:w-96 group relative rounded-2xl overflow-hidden bg-charcoal-900 border border-slate-800 shadow-xl">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1VBkOV2px2u_0btDAouRgAbk_ovGygQo7=s1600" 
+                             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=download&id=1VBkOV2px2u_0btDAouRgAbk_ovGygQo7';"
+                             alt="Hasil Kerja Bengkel Las Cipta Kencana Jaya 5" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 bg-charcoal-900 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-sm font-bold text-white">Dokumentasi Proyek #05</span>
+                        <span class="text-xs text-amberforge-400 font-semibold">Cipta Kencana Jaya</span>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="galeri-item snap-start shrink-0 w-72 sm:w-80 md:w-96 group relative rounded-2xl overflow-hidden bg-charcoal-900 border border-slate-800 shadow-xl">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1GedASIorkqVHJQjjIVPlvxrkFGn4unXS=s1600" 
+                             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=download&id=1GedASIorkqVHJQjjIVPlvxrkFGn4unXS';"
+                             alt="Hasil Kerja Bengkel Las Cipta Kencana Jaya 6" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 bg-charcoal-900 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-sm font-bold text-white">Dokumentasi Proyek #06</span>
+                        <span class="text-xs text-amberforge-400 font-semibold">Cipta Kencana Jaya</span>
+                    </div>
+                </div>
+
+                <!-- Foto 7 -->
+                <div class="galeri-item snap-start shrink-0 w-72 sm:w-80 md:w-96 group relative rounded-2xl overflow-hidden bg-charcoal-900 border border-slate-800 shadow-xl">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1OqbhLDThXAbLAdAzGsuhm4f_AfDU7upq=s1600" 
+                             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=download&id=1OqbhLDThXAbLAdAzGsuhm4f_AfDU7upq';"
+                             alt="Hasil Kerja Bengkel Las Cipta Kencana Jaya 7" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 bg-charcoal-900 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-sm font-bold text-white">Dokumentasi Proyek #07</span>
+                        <span class="text-xs text-amberforge-400 font-semibold">Cipta Kencana Jaya</span>
+                    </div>
+                </div>
+
+                <!-- Foto 8 -->
+                <div class="galeri-item snap-start shrink-0 w-72 sm:w-80 md:w-96 group relative rounded-2xl overflow-hidden bg-charcoal-900 border border-slate-800 shadow-xl">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1zTzpliyDIaQ1IwaZVVthPf159lnDFSBV=s1600" 
+                             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=download&id=1zTzpliyDIaQ1IwaZVVthPf159lnDFSBV';"
+                             alt="Hasil Kerja Bengkel Las Cipta Kencana Jaya 8" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 bg-charcoal-900 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-sm font-bold text-white">Dokumentasi Proyek #08</span>
+                        <span class="text-xs text-amberforge-400 font-semibold">Cipta Kencana Jaya</span>
+                    </div>
+                </div>
+
+                <!-- Foto 9 -->
+                <div class="galeri-item snap-start shrink-0 w-72 sm:w-80 md:w-96 group relative rounded-2xl overflow-hidden bg-charcoal-900 border border-slate-800 shadow-xl">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1H1URHtCAJs5nFqsV_NDJksvtII7-yMkS=s1600" 
+                             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=download&id=1H1URHtCAJs5nFqsV_NDJksvtII7-yMkS';"
+                             alt="Hasil Kerja Bengkel Las Cipta Kencana Jaya 9" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 bg-charcoal-900 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-sm font-bold text-white">Dokumentasi Proyek #09</span>
+                        <span class="text-xs text-amberforge-400 font-semibold">Cipta Kencana Jaya</span>
+                    </div>
+                </div>
+
+                <!-- Foto 10 -->
+                <div class="galeri-item snap-start shrink-0 w-72 sm:w-80 md:w-96 group relative rounded-2xl overflow-hidden bg-charcoal-900 border border-slate-800 shadow-xl">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="https://lh3.googleusercontent.com/d/1mwjnerHXUtGiyfTO-4f1ucYpPfBFEOfb=s1600" 
+                             onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=download&id=1mwjnerHXUtGiyfTO-4f1ucYpPfBFEOfb';"
+                             alt="Hasil Kerja Bengkel Las Cipta Kencana Jaya 10" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    </div>
+                    <div class="p-4 bg-charcoal-900 border-t border-slate-800 flex items-center justify-between">
+                        <span class="text-sm font-bold text-white">Dokumentasi Proyek #10</span>
+                        <span class="text-xs text-amberforge-400 font-semibold">Cipta Kencana Jaya</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tombol CTA Bawah Galeri -->
+            <div class="mt-10 text-center">
+                <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20tertarik%20dengan%20hasil%20kerja%20di%20galeri%20website%20dan%20ingin%20tanya%20model%20lainnya." 
+                   target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center px-6 py-3.5 rounded-xl bg-amberforge-500 hover:bg-amberforge-400 text-charcoal-950 font-bold text-sm transition shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-lg mr-2"></i>
+                    Minta Katalog Model & Harga via WA
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== KEUNGGULAN KAMI ==================== -->
+    <section id="keunggulan" class="py-20 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Bagian Kiri: Penjelasan -->
+                <div class="lg:col-span-5 space-y-5">
+                    <span class="inline-block px-3.5 py-1.5 rounded-full bg-charcoal-900 text-amberforge-400 font-bold text-xs uppercase tracking-wider">
+                        Mengapa Memilih Kami?
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-charcoal-900 tracking-tight leading-tight">
+                        Kualitas Las Kuat, Hasil Rapi & Jujur Spesifikasi
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Di <strong>Bengkel Las Cipta Kencana Jaya</strong>, kepercayaan pelanggan adalah prioritas utama. Kami memastikan setiap sambungan las digerinda halus, dilapisi anti karat, dan menggunakan ketebalan besi yang benar-benar sesuai kesepakatan awal.
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20ingin%20jadwalkan%20survei%20gratis%20ke%20lokasi%20saya." 
+                           target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center px-6 py-3.5 rounded-xl bg-charcoal-900 hover:bg-charcoal-800 text-white font-bold text-sm shadow-md transition">
+                            <i class="fa-solid fa-calendar-check text-amberforge-400 mr-2.5"></i>
+                            Jadwalkan Survei Gratis
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bagian Kanan: 5 Poin Keunggulan -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    
+                    <!-- Poin 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-amber-100 text-amberforge-600 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-house-chimney-crack"></i>
+                        </div>
+                        <h3 class="font-bold text-charcoal-900 text-base mb-1.5">Bisa Panggilan ke Lokasi</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Praktis untuk perbaikan pagar/kanopi darurat maupun survei pengukuran langsung di rumah Anda.
+                        </p>
+                    </div>
+
+                    <!-- Poin 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-amber-100 text-amberforge-600 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-ruler-combined"></i>
+                        </div>
+                        <h3 class="font-bold text-charcoal-900 text-base mb-1.5">Gratis Survei & Konsultasi</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Bebas biaya survei ukur lokasi dan konsultasi model desain untuk wilayah Kota & Kabupaten Cirebon.
+                        </p>
+                    </div>
+
+                    <!-- Poin 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-amber-100 text-amberforge-600 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-cubes"></i>
+                        </div>
+                        <h3 class="font-bold text-charcoal-900 text-base mb-1.5">Material Besi Tebal & Berkualitas</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Ketebalan besi hollow, pipa, maupun atap dijelaskan secara transparan tanpa pengurangan spesifikasi.
+                        </p>
+                    </div>
+
+                    <!-- Poin 4 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm">
+                        <div class="w-11 h-11 rounded-xl bg-amber-100 text-amberforge-600 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h3 class="font-bold text-charcoal-900 text-base mb-1.5">Harga Transparan & Kompetitif</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Penawaran harga jelas per meter atau borongan, dan pilihan bahan dapat disesuaikan dengan anggaran Anda.
+                        </p>
+                    </div>
+
+                    <!-- Poin 5 (Full Width di Grid) -->
+                    <div class="sm:col-span-2 bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col sm:flex-row sm:items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-charcoal-900 text-amberforge-400 flex items-center justify-center text-xl flex-shrink-0">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-charcoal-900 text-base mb-1">Pengerjaan Rapi & Tepat Waktu</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                Dikerjakan oleh tukang las berpengalaman dengan sambungan las matang, dempul & gerinda halus, serta komitmen selesai sesuai jadwal yang disepakati.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FORM KONSULTASI / ESTIMASI CEPAT KE WHATSAPP ==================== -->
+    <section id="konsultasi" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-charcoal-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-800">
+                <div class="grid grid-cols-1 lg:grid-cols-12">
+                    
+                    <!-- Info Samping Form -->
+                    <div class="lg:col-span-5 bg-charcoal-950 p-8 sm:p-10 text-white flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-slate-800">
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-amberforge-500/20 text-amberforge-400 text-xs font-bold uppercase tracking-wider mb-4">
+                                Estimasi & Survei Cepat
+                            </span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold leading-tight mb-4">
+                                Konsultasi Proyek Anda Sekarang
+                            </h2>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Isi formulir singkat di samping untuk menanyakan perkiraan biaya atau memanggil tim kami ke lokasi. Pesan akan otomatis tersusun dan terkirim ke WhatsApp kami.
+                            </p>
+
+                            <div class="space-y-4 text-sm">
+                                <div class="flex items-center text-slate-300">
+                                    <i class="fa-brands fa-whatsapp text-amberforge-400 text-lg w-7"></i>
+                                    <span>0812-8053-5763</span>
+                                </div>
+                                <div class="flex items-center text-slate-300">
+                                    <i class="fa-solid fa-clock text-amberforge-400 text-base w-7"></i>
+                                    <span>Senin – Minggu (08.00 – 17.00 WIB)</span>
+                                </div>
+                                <div class="flex items-center text-slate-300">
+                                    <i class="fa-solid fa-map-location-dot text-amberforge-400 text-base w-7"></i>
+                                    <span>Cirebon Kota & Kabupaten</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 p-4 rounded-2xl bg-charcoal-800/80 border border-slate-700/70">
+                            <p class="text-xs text-slate-300 leading-relaxed">
+                                <i class="fa-solid fa-circle-info text-amberforge-400 mr-1.5"></i>
+                                Belum tahu ukuran pastinya? Tidak masalah! Pilih layanan yang diinginkan, tim kami siap datang mengukur ke lokasi secara gratis.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Form Interaktif -->
+                    <div class="lg:col-span-7 p-8 sm:p-10 bg-white">
+                        <form id="wa-form" class="space-y-5">
+                            <div>
+                                <label for="nama" class="block text-sm font-bold text-charcoal-900 mb-1.5">Nama Lengkap *</label>
+                                <input type="text" id="nama" name="nama" required placeholder="Contoh: Bapak Budi / Ibu Sari"
+                                       class="w-full px-4 py-3 rounded-xl border border-slate-300 text-charcoal-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amberforge-500 focus:border-amberforge-500 transition text-sm">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="alamat" class="block text-sm font-bold text-charcoal-900 mb-1.5">Alamat / Kecamatan di Cirebon *</label>
+                                    <input type="text" id="alamat" name="alamat" required placeholder="Contoh: Kesambi / Sumber / Kedawung"
+                                           class="w-full px-4 py-3 rounded-xl border border-slate-300 text-charcoal-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amberforge-500 focus:border-amberforge-500 transition text-sm">
+                                </div>
+
+                                <div>
+                                    <label for="layanan-pilih" class="block text-sm font-bold text-charcoal-900 mb-1.5">Jenis Pekerjaan *</label>
+                                    <select id="layanan-pilih" name="layanan" required
+                                            class="w-full px-4 py-3 rounded-xl border border-slate-300 text-charcoal-900 bg-white focus:outline-none focus:ring-2 focus:ring-amberforge-500 focus:border-amberforge-500 transition text-sm">
+                                        <option value="Pembuatan Kanopi">Pembuatan Kanopi</option>
+                                        <option value="Pagar & Pintu Gerbang">Pagar & Pintu Gerbang</option>
+                                        <option value="Teralis Jendela & Pintu Teralis">Teralis Jendela & Pintu Teralis</option>
+                                        <option value="Railing Tangga & Balkon">Railing Tangga & Balkon</option>
+                                        <option value="Tangga Putar & Mezzanine">Tangga Putar & Mezzanine</option>
+                                        <option value="Jasa Las Panggilan & Perbaikan">Jasa Las Panggilan & Perbaikan</option>
+                                        <option value="Konstruksi Besi Lainnya">Konstruksi Besi Lainnya</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="catatan" class="block text-sm font-bold text-charcoal-900 mb-1.5">Perkiraan Ukuran / Catatan Tambahan</label>
+                                <textarea id="catatan" name="catatan" rows="3" placeholder="Contoh: Kanopi carport ukuran sekitar 4x5 meter atap alderon, atau minta jadwal survei hari Sabtu pagi."
+                                          class="w-full px-4 py-3 rounded-xl border border-slate-300 text-charcoal-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amberforge-500 focus:border-amberforge-500 transition text-sm"></textarea>
+                            </div>
+
+                            <!-- Kotak Pesan Validasi Kustom (Menggantikan alert()) -->
+                            <div id="form-feedback" class="hidden p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
+                                <i class="fa-solid fa-triangle-exclamation mr-1.5"></i>
+                                <span id="form-feedback-text">Mohon lengkapi Nama dan Alamat/Kecamatan Anda terlebih dahulu.</span>
+                            </div>
+
+                            <button type="submit" 
+                                    class="w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-base shadow-lg shadow-emerald-600/20 flex items-center justify-center transition transform hover:-translate-y-0.5">
+                                <i class="fa-brands fa-whatsapp text-2xl mr-2.5"></i>
+                                Kirim via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== AREA LAYANAN CIREBON ==================== -->
+    <section id="area" class="py-16 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="inline-block px-3.5 py-1.5 rounded-full bg-amber-100 text-amberforge-600 font-bold text-xs uppercase tracking-wider mb-3">
+                    Jangkauan Wilayah
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal-900">
+                    Area Layanan Survei & Las Panggilan Cirebon
+                </h2>
+                <p class="mt-2 text-slate-600 text-sm sm:text-base">
+                    Tim kami siap melayani panggilan survei lokasi, pengiriman, pemasangan, hingga perbaikan las di seluruh wilayah Kota dan Kabupaten Cirebon:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <!-- Kota Cirebon -->
+                <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-charcoal-900 text-amberforge-400 flex items-center justify-center mr-3">
+                            <i class="fa-solid fa-city"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-charcoal-900">Wilayah Kota Cirebon</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Harjamukti</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Kesambi</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Kejaksan</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Lemahwungkuk</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Pekalipan</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-amber-50 text-amberforge-600 border border-amber-200 text-xs font-semibold">Perumnas & Sekitarnya</span>
+                    </div>
+                </div>
+
+                <!-- Kabupaten Cirebon -->
+                <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-xl bg-charcoal-900 text-amberforge-400 flex items-center justify-center mr-3">
+                            <i class="fa-solid fa-map-pin"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-charcoal-900">Wilayah Kabupaten Cirebon</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Kedawung</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Sumber</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Talun</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Mundu</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Plered</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Weru</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Tengah Tani</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">Gunung Jati</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-amber-50 text-amberforge-600 border border-amber-200 text-xs font-semibold">& Kecamatan Sekitarnya</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-charcoal-950 text-slate-300 pt-16 pb-24 sm:pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-amberforge-500 flex items-center justify-center text-charcoal-950 font-extrabold text-xl">
+                            <i class="fa-solid fa-fire-flame-curved"></i>
+                        </div>
+                        <div>
+                            <span class="block text-white font-extrabold text-lg tracking-wide">
+                                BENGKEL LAS <span class="text-amberforge-500">CIPTA KENCANA JAYA</span>
+                            </span>
+                            <span class="block text-slate-400 text-xs uppercase tracking-wider">
+                                Spesialis Kanopi & Pagar Cirebon - Bisa Panggilan
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-md">
+                        Mitra terpercaya Anda untuk pembuatan kanopi, pagar minimalis, pintu gerbang, teralis, railing tangga, tangga putar, dan jasa perbaikan las panggilan di Kota & Kabupaten Cirebon.
+                    </p>
+                </div>
+
+                <!-- Navigasi Cepat -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Layanan Utama</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li><a href="#layanan" class="hover:text-amberforge-400 transition">Kanopi Alderon & Baja Ringan</a></li>
+                        <li><a href="#layanan" class="hover:text-amberforge-400 transition">Pagar Minimalis & Cutting Laser</a></li>
+                        <li><a href="#layanan" class="hover:text-amberforge-400 transition">Teralis Jendela & Pintu Teralis</a></li>
+                        <li><a href="#layanan" class="hover:text-amberforge-400 transition">Railing Tangga & Balkon</a></li>
+                        <li><a href="#layanan" class="hover:text-amberforge-400 transition">Jasa Las Panggilan Cirebon</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kontak & Jam Operasional -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg mr-2.5 mt-0.5"></i>
+                            <div>
+                                <span class="block text-xs text-slate-500">Telepon / WhatsApp</span>
+                                <a href="https://wa.me/6281280535763" target="_blank" rel="noopener noreferrer" class="text-white font-bold hover:text-amberforge-400 transition">
+                                    0812-8053-5763
+                                </a>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-clock text-amberforge-400 text-base mr-2.5 mt-0.5"></i>
+                            <div>
+                                <span class="block text-xs text-slate-500">Jam Operasional</span>
+                                <span class="text-slate-200">Setiap Hari: 08.00 – 17.00 WIB</span>
+                                <span class="block text-xs text-slate-400">(Konsultasi WA fleksibel)</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot text-amberforge-400 text-base mr-2.5 mt-0.5"></i>
+                            <div>
+                                <span class="block text-xs text-slate-500">Area Layanan</span>
+                                <span class="text-slate-200">Kota & Kabupaten Cirebon</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="tahun-sekarang">2026</span> Bengkel Las Cipta Kencana Jaya Cirebon. Hak Cipta Dilindungi.</p>
+                <p>Spesialis Kanopi, Pagar & Jasa Las Panggilan Profesional.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== FLOATING WHATSAPP BUTTON ==================== -->
+    <a href="https://wa.me/6281280535763?text=Halo%20Bengkel%20Las%20Cipta%20Kencana%20Jaya%2C%20saya%20ingin%20konsultasi%20jasa%20las%20di%20Cirebon." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Chat WhatsApp Bengkel Las Cipta Kencana Jaya"
+       class="fixed bottom-5 right-5 z-50 group flex items-center bg-emerald-600 hover:bg-emerald-500 text-white rounded-full p-3.5 sm:px-5 sm:py-3.5 shadow-2xl shadow-emerald-900/40 transition transform hover:scale-105">
+        <i class="fa-brands fa-whatsapp text-2xl sm:text-2xl"></i>
+        <span class="hidden sm:inline-block ml-2.5 font-bold text-sm tracking-wide">Chat WhatsApp</span>
+    </a>
+
+    <!-- ==================== JAVASCRIPT INTERAKTIF ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Set tahun otomatis di footer
+            const yearEl = document.getElementById('tahun-sekarang');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            // 2. Toggle Menu Navigasi Mobile
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function () {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    if (isHidden) {
+                        mobileMenu.classList.remove('hidden');
+                        menuIcon.classList.remove('fa-bars');
+                        menuIcon.classList.add('fa-xmark');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('fa-xmark');
+                        menuIcon.classList.add('fa-bars');
+                    }
+                });
+
+                // Tutup menu mobile otomatis saat tautan diklik
+                mobileLinks.forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.add('hidden');
+                        menuIcon.classList.remove('fa-xmark');
+                        menuIcon.classList.add('fa-bars');
+                    });
+                });
+            }
+
+            // 3. Penanganan Form Konsultasi / Estimasi Cepat ke WhatsApp
+            const waForm = document.getElementById('wa-form');
+            const feedbackBox = document.getElementById('form-feedback');
+            const feedbackText = document.getElementById('form-feedback-text');
+
+            if (waForm) {
+                waForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const nama = document.getElementById('nama').value.trim();
+                    const alamat = document.getElementById('alamat').value.trim();
+                    const layanan = document.getElementById('layanan-pilih').value;
+                    const catatan = document.getElementById('catatan').value.trim();
+
+                    // Validasi tanpa menggunakan alert()
+                    if (!nama || !alamat) {
+                        feedbackText.textContent = 'Mohon isi Nama Lengkap dan Alamat/Kecamatan Anda terlebih dahulu.';
+                        feedbackBox.classList.remove('hidden');
+                        return;
+                    }
+
+                    // Sembunyikan pesan error jika valid
+                    feedbackBox.classList.add('hidden');
+
+                    // Format pesan WhatsApp yang rapi dan natural
+                    let pesanWA = `Halo *Bengkel Las Cipta Kencana Jaya*,\n`;
+                    pesanWA += `Saya ingin konsultasi / minta estimasi pengerjaan las:\n\n`;
+                    pesanWA += `• *Nama:* ${nama}\n`;
+                    pesanWA += `• *Alamat / Kec:* ${alamat}\n`;
+                    pesanWA += `• *Jenis Pekerjaan:* ${layanan}\n`;
+                    
+                    if (catatan) {
+                        pesanWA += `• *Ukuran / Catatan:* ${catatan}\n`;
+                    }
+                    
+                    pesanWA += `\nMohon informasinya. Terima kasih.`;
+
+                    const nomorWA = '6281280535763';
+                    const urlWA = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesanWA)}`;
+
+                    // Buka WhatsApp di tab/aplikasi baru
+                    window.open(urlWA, '_blank', 'noopener,noreferrer');
+                });
+            }
+
+            // 4. Galeri Hasil Kerja Auto-Scroll Setiap 3 Detik
+            const galeriTrack = document.getElementById('galeri-track');
+            const prevBtn = document.getElementById('galeri-prev');
+            const nextBtn = document.getElementById('galeri-next');
+
+            if (galeriTrack) {
+                let autoScrollTimer;
+                const getStepWidth = () => {
+                    const firstCard = galeriTrack.querySelector('.galeri-item');
+                    return firstCard ? firstCard.offsetWidth + 24 : 340; // lebar card + gap-6 (24px)
+                };
+
+                const scrollNext = () => {
+                    const maxScrollLeft = galeriTrack.scrollWidth - galeriTrack.clientWidth;
+                    if (galeriTrack.scrollLeft >= maxScrollLeft - 10) {
+                        galeriTrack.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        galeriTrack.scrollBy({ left: getStepWidth(), behavior: 'smooth' });
+                    }
+                };
+
+                const scrollPrev = () => {
+                    if (galeriTrack.scrollLeft <= 10) {
+                        galeriTrack.scrollTo({ left: galeriTrack.scrollWidth, behavior: 'smooth' });
+                    } else {
+                        galeriTrack.scrollBy({ left: -getStepWidth(), behavior: 'smooth' });
+                    }
+                };
+
+                const startAutoScroll = () => {
+                    clearInterval(autoScrollTimer);
+                    autoScrollTimer = setInterval(scrollNext, 3000);
+                };
+
+                const stopAutoScroll = () => {
+                    clearInterval(autoScrollTimer);
+                };
+
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => {
+                        scrollNext();
+                        startAutoScroll();
+                    });
+                }
+
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => {
+                        scrollPrev();
+                        startAutoScroll();
+                    });
+                }
+
+                // Jeda otomatis saat kursor diarahkan atau disentuh pengguna
+                galeriTrack.addEventListener('mouseenter', stopAutoScroll);
+                galeriTrack.addEventListener('mouseleave', startAutoScroll);
+                galeriTrack.addEventListener('touchstart', stopAutoScroll, { passive: true });
+                galeriTrack.addEventListener('touchend', startAutoScroll);
+
+                startAutoScroll();
+            }
+        });
+    </script>
+</body>
+</html>
